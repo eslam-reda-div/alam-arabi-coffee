@@ -8,33 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Coffee Brand Colors - الهرم */
+    --beaver: 25 17% 56%; /* #A18979 */
+    --russet: 18 64% 36%; /* #954921 */  
+    --van-dyke: 20 24% 25%; /* #4F3B31 */
+    --coffee-white: 60 20% 99%; /* #FEFEFE */
+    
+    /* Semantic Design System */
+    --background: var(--coffee-white);
+    --foreground: var(--van-dyke);
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: var(--coffee-white);
+    --card-foreground: var(--van-dyke);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: var(--coffee-white);
+    --popover-foreground: var(--van-dyke);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--russet);
+    --primary-foreground: var(--coffee-white);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--beaver);
+    --secondary-foreground: var(--coffee-white);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 25 10% 92%;
+    --muted-foreground: var(--beaver);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--beaver);
+    --accent-foreground: var(--coffee-white);
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--coffee-white);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 25 8% 88%;
+    --input: 25 8% 88%;
+    --ring: var(--russet);
+    
+    /* Coffee Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--russet)), hsl(var(--van-dyke)));
+    --gradient-warm: linear-gradient(45deg, hsl(var(--beaver)), hsl(var(--russet)));
+    --gradient-elegant: linear-gradient(180deg, hsl(var(--coffee-white)), hsl(25 15% 96%));
+    
+    /* Shadows with coffee warmth */
+    --shadow-warm: 0 10px 30px -10px hsl(var(--russet) / 0.3);
+    --shadow-elegant: 0 4px 20px -4px hsl(var(--beaver) / 0.25);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -101,5 +120,53 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    direction: rtl;
+    font-family: 'Cairo', 'Amiri', 'Noto Sans Arabic', system-ui, sans-serif;
+  }
+  
+  /* RTL Support */
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+  
+  /* Custom coffee brand utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-elegant {
+    background: var(--gradient-elegant);
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Arabic font optimizations */
+  .font-arabic {
+    font-family: 'Amiri', 'Cairo', 'Noto Sans Arabic', serif;
+    line-height: 1.8;
+  }
+  
+  /* Coffee product hover effects */
+  .product-card {
+    transition: var(--transition-smooth);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-warm);
   }
 }

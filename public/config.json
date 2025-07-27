@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "الهرم",
+    "nameEn": "Al-Haram",
+    "tagline": "طعم أصيل... تراث عريق",
+    "taglineEn": "Authentic Taste... Noble Heritage",
+    "colors": {
+      "primary": "#954921",
+      "secondary": "#A18979", 
+      "accent": "#4F3B31",
+      "light": "#FEFEFE"
+    }
+  },
+  "contact": {
+    "whatsappNumber": "966501234567",
+    "orderMessageTemplate": "مرحباً، أريد الاستفسار عن {productName} وأرغب في طلبه"
+  },
+  "seo": {
+    "title": "الهرم - قهوة عربية أصيلة",
+    "description": "اكتشف مجموعة قهوة الهرم الفاخرة - قهوة عربية أصيلة محمصة بعناية فائقة لتمنحك طعماً لا يُنسى",
+    "keywords": "قهوة عربية, قهوة فاخرة, الهرم, قهوة أصيلة, قهوة محمصة"
+  }
+}

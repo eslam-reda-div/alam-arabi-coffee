@@ -19,6 +19,13 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Coffee Brand Colors
+				beaver: 'hsl(var(--beaver))',
+				russet: 'hsl(var(--russet))',
+				'van-dyke': 'hsl(var(--van-dyke))',
+				'coffee-white': 'hsl(var(--coffee-white))',
+				
+				// Semantic colors using coffee palette
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
