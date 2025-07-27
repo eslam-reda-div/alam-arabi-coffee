@@ -10,13 +10,7 @@ interface Product {
   nameEn: string;
   price: string;
   description: string;
-  shortDescription: string;
   images: string[];
-  category: string;
-  origin: string;
-  roastLevel: string;
-  weight: string;
-  featured: boolean;
 }
 
 interface Config {
@@ -31,7 +25,7 @@ const ProductsSection = () => {
   const [config, setConfig] = useState<Config | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [filter, setFilter] = useState<string>("all");
+  
 
   useEffect(() => {
     // Load products data
@@ -60,13 +54,6 @@ const ProductsSection = () => {
     window.open(whatsappUrl, '_blank');
   };
 
-  const categories = ["all", "قهوة مطحونة", "قهوة عضوية", "حبوب كاملة"];
-  
-  const filteredProducts = filter === "all" 
-    ? products 
-    : products.filter(product => product.category === filter);
-
-  const featuredProducts = products.filter(product => product.featured);
 
   return (
     <section id="products" className="py-20 bg-gradient-elegant">
@@ -85,50 +72,9 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* Featured Products */}
-        {featuredProducts.length > 0 && (
-          <div className="mb-16">
-            <div className="flex justify-center items-center gap-2 mb-8">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <h3 className="font-arabic text-2xl font-bold text-foreground">
-                المنتجات المميزة
-              </h3>
-              <Sparkles className="w-6 h-6 text-primary" />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {featuredProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onClick={() => handleProductClick(product)}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Category Filter */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {categories.map((category) => (
-            <Badge
-              key={category}
-              variant={filter === category ? "default" : "secondary"}
-              className={`cursor-pointer px-6 py-2 text-base font-arabic transition-smooth ${
-                filter === category 
-                  ? 'bg-gradient-primary text-primary-foreground shadow-warm' 
-                  : 'hover:bg-primary/10 hover:text-primary'
-              }`}
-              onClick={() => setFilter(category)}
-            >
-              {category === "all" ? "جميع المنتجات" : category}
-            </Badge>
-          ))}
-        </div>
-
-        {/* All Products Grid */}
+        {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+          {products.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
@@ -137,7 +83,7 @@ const ProductsSection = () => {
           ))}
         </div>
 
-        {filteredProducts.length === 0 && (
+        {products.length === 0 && (
           <div className="text-center py-16">
             <Coffee className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
             <p className="font-arabic text-xl text-muted-foreground">

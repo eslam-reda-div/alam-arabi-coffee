@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { MessageCircle, Package, MapPin, Coffee } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 interface Product {
@@ -12,10 +12,6 @@ interface Product {
   price: string;
   description: string;
   images: string[];
-  category: string;
-  origin: string;
-  roastLevel: string;
-  weight: string;
 }
 
 interface ProductModalProps {
@@ -80,13 +76,10 @@ const ProductModal = ({ product, isOpen, onClose, onOrder }: ProductModalProps) 
           
           {/* Product Details */}
           <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="text-center">
               <span className="text-3xl font-bold text-primary">
                 {product.price}
               </span>
-              <Badge className="bg-gradient-warm text-secondary-foreground">
-                {product.category}
-              </Badge>
             </div>
             
             <Separator />
@@ -98,47 +91,6 @@ const ProductModal = ({ product, isOpen, onClose, onOrder }: ProductModalProps) 
               <p className="font-arabic text-muted-foreground leading-relaxed">
                 {product.description}
               </p>
-            </div>
-            
-            <Separator />
-            
-            {/* Product Specifications */}
-            <div className="space-y-3">
-              <h4 className="font-arabic text-lg font-semibold text-foreground">
-                تفاصيل المنتج
-              </h4>
-              
-              <div className="grid grid-cols-1 gap-3">
-                <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <div className="text-right">
-                    <span className="font-arabic text-sm text-muted-foreground">المنشأ:</span>
-                    <span className="font-arabic font-medium text-foreground mr-2">
-                      {product.origin}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
-                  <Coffee className="w-5 h-5 text-primary" />
-                  <div className="text-right">
-                    <span className="font-arabic text-sm text-muted-foreground">درجة التحميص:</span>
-                    <span className="font-arabic font-medium text-foreground mr-2">
-                      {product.roastLevel}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
-                  <Package className="w-5 h-5 text-primary" />
-                  <div className="text-right">
-                    <span className="font-arabic text-sm text-muted-foreground">الوزن:</span>
-                    <span className="font-arabic font-medium text-foreground mr-2">
-                      {product.weight}
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
             
             <Separator />

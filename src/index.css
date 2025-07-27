@@ -8,49 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Coffee Brand Colors - الهرم */
-    --beaver: 25 17% 56%; /* #A18979 */
-    --russet: 18 64% 36%; /* #954921 */  
-    --van-dyke: 20 24% 25%; /* #4F3B31 */
-    --coffee-white: 60 20% 99%; /* #FEFEFE */
+    /* Perfect Coffee Brand Colors - Rich & Warm */
+    --espresso: 25 45% 15%; /* Deep espresso brown */
+    --coffee-bean: 30 35% 25%; /* Rich coffee bean */
+    --golden-foam: 35 60% 70%; /* Golden cream foam */
+    --coffee-cream: 35 25% 90%; /* Light coffee cream */
+    --warm-white: 35 15% 98%; /* Warm off-white */
     
     /* Semantic Design System */
-    --background: var(--coffee-white);
-    --foreground: var(--van-dyke);
+    --background: var(--warm-white);
+    --foreground: var(--espresso);
 
-    --card: var(--coffee-white);
-    --card-foreground: var(--van-dyke);
+    --card: var(--warm-white);
+    --card-foreground: var(--espresso);
 
-    --popover: var(--coffee-white);
-    --popover-foreground: var(--van-dyke);
+    --popover: var(--warm-white);
+    --popover-foreground: var(--espresso);
 
-    --primary: var(--russet);
-    --primary-foreground: var(--coffee-white);
+    --primary: var(--coffee-bean);
+    --primary-foreground: var(--warm-white);
 
-    --secondary: var(--beaver);
-    --secondary-foreground: var(--coffee-white);
+    --secondary: var(--golden-foam);
+    --secondary-foreground: var(--espresso);
 
-    --muted: 25 10% 92%;
-    --muted-foreground: var(--beaver);
+    --muted: 35 20% 95%;
+    --muted-foreground: var(--coffee-bean);
 
-    --accent: var(--beaver);
-    --accent-foreground: var(--coffee-white);
+    --accent: var(--golden-foam);
+    --accent-foreground: var(--espresso);
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: var(--coffee-white);
+    --destructive-foreground: var(--warm-white);
 
-    --border: 25 8% 88%;
-    --input: 25 8% 88%;
-    --ring: var(--russet);
+    --border: 35 15% 88%;
+    --input: 35 15% 90%;
+    --ring: var(--coffee-bean);
     
     /* Coffee Brand Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--russet)), hsl(var(--van-dyke)));
-    --gradient-warm: linear-gradient(45deg, hsl(var(--beaver)), hsl(var(--russet)));
-    --gradient-elegant: linear-gradient(180deg, hsl(var(--coffee-white)), hsl(25 15% 96%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--coffee-bean)), hsl(var(--espresso)));
+    --gradient-warm: linear-gradient(45deg, hsl(var(--golden-foam)), hsl(var(--coffee-bean)));
+    --gradient-elegant: linear-gradient(180deg, hsl(var(--warm-white)), hsl(35 20% 96%));
     
-    /* Shadows with coffee warmth */
-    --shadow-warm: 0 10px 30px -10px hsl(var(--russet) / 0.3);
-    --shadow-elegant: 0 4px 20px -4px hsl(var(--beaver) / 0.25);
+    /* Enhanced Shadows */
+    --shadow-warm: 0 10px 40px -12px hsl(var(--coffee-bean) / 0.4);
+    --shadow-elegant: 0 6px 24px -6px hsl(var(--golden-foam) / 0.3);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

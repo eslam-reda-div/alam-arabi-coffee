@@ -6,10 +6,8 @@ interface Product {
   name: string;
   nameEn: string;
   price: string;
-  shortDescription: string;
+  description: string;
   images: string[];
-  category: string;
-  featured: boolean;
 }
 
 interface ProductCardProps {
@@ -29,11 +27,6 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
           alt={product.name}
           className="w-full h-64 object-cover transition-smooth group-hover:scale-105"
         />
-        {product.featured && (
-          <Badge className="absolute top-3 right-3 bg-gradient-primary text-primary-foreground border-0">
-            مميز
-          </Badge>
-        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
       </div>
       
@@ -48,14 +41,10 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
         </div>
         
         <p className="font-arabic text-muted-foreground line-clamp-2 leading-relaxed">
-          {product.shortDescription}
+          {product.description.substring(0, 80)}...
         </p>
         
-        <div className="flex justify-between items-center pt-2">
-          <Badge variant="secondary" className="text-xs">
-            {product.category}
-          </Badge>
-          
+        <div className="flex justify-end items-center pt-2">
           <div className="text-sm text-primary font-medium hover:text-primary/80 transition-smooth">
             عرض التفاصيل ←
           </div>
